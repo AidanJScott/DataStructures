@@ -177,7 +177,7 @@ class LinkedList:
 
         while current is not None:
             # use concatenation to add each payload of each node to the string
-            string += " " + str(current.getPayload())
+            string += str(current.getPayload()) + " "
 
             # set current to the next listNode
             current = current.getNext()
