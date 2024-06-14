@@ -132,7 +132,7 @@ class HashTableProbing:
         originalBucketNum = bucketNum
 
         # initial rehash
-        if self.__buckets is not None and self.__buckets[bucketNum] == value:
+        if self.__buckets[bucketNum] is not None and self.__buckets[bucketNum] == value:
             return self.__buckets[bucketNum]
         else:
             bucketNum = self.__rehash(bucketNum)
