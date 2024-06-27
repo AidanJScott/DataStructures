@@ -241,7 +241,7 @@ def runDemo(structureChoice):
 
     findEndTime = time.time()
 
-    # print out time it takes to find records
+    # print out time it takes to insert and find records
     print(f"\nTime to insert {existingIdCount} records is: {insertEndTime - insertStartTime} seconds")
     print(f"Time to insert {lookupIdCount} records is: {findEndTime - findStartTime} seconds")
 
