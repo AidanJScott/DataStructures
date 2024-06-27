@@ -211,7 +211,7 @@ def runDemo(structureChoice):
         if structureChoice == VALUE_LINKED_LIST:
             dataStructure.append(int(id))
 
-        elif structureChoice == VALUE_TREES:
+        elif choice == VALUE_AVL_TREE:
             dataStructure = dataStructure.insert(int(id))
 
         else:
