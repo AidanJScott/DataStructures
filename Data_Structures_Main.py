@@ -64,6 +64,7 @@ MEDIUM_LOOKUP_FILENAME = "lookupListMedium.txt"
 LONG_LIST_FILENAME = "listOfIdsLong.txt"
 LONG_LOOKUP_FILENAME = "lookupListLong.txt"
 
+# other values
 DEFAULT_PRINT_TOGGLE = True
 DEFAULT_HASH_TABLE_SIZE = 1000003
 INDEX_PRINT_TOGGLE = 0
@@ -309,23 +310,23 @@ def runDemo(structureChoice, settingsList):
         dataStructure = LinkedList()
 
     elif structureChoice == VALUE_TREES:
-        choice = getStructureType(structureChoice)
+        treeChoice = getStructureType(structureChoice)
 
-        if choice == VALUE_BINARY_SEARCH_TREE:
+        if treeChoice == VALUE_BINARY_SEARCH_TREE:
             dataStructure = BinarySearchTree()
 
-        elif choice == VALUE_AVL_TREE:
+        elif treeChoice == VALUE_AVL_TREE:
             dataStructure = AVLTree()
 
     elif structureChoice == VALUE_HASH_TABLE:
-        choice = getStructureType(structureChoice)
+        hashChoice = getStructureType(structureChoice)
 
         hashTableSize = settingsList[1]
 
-        if choice == VALUE_HASH_TABLE_CHAINING:
+        if hashChoice == VALUE_HASH_TABLE_CHAINING:
             dataStructure = HashTableChaining(hashTableSize)
 
-        elif choice == VALUE_HASH_TABLE_PROBING:
+        elif hashChoice == VALUE_HASH_TABLE_PROBING:
             dataStructure = HashTableProbing(hashTableSize)
 
     insertStartTime = time.time()
@@ -337,7 +338,7 @@ def runDemo(structureChoice, settingsList):
         if structureChoice == VALUE_LINKED_LIST:
             dataStructure.append(int(id))
 
-        elif choice == VALUE_AVL_TREE:
+        elif dataStructure is AVLTree:
             dataStructure = dataStructure.insert(int(id))
 
         else:
@@ -423,7 +424,6 @@ def main():
         # execute the code for associated menu option
         if not exitMenu and menuChoice.upper() != "S":
             runDemo(menuChoice, settingsList)
-
 
 if __name__ == "__main__":
     main()
